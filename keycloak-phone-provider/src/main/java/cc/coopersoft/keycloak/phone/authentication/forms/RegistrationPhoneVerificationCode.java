@@ -1,6 +1,5 @@
 package cc.coopersoft.keycloak.phone.authentication.forms;
 
-import cc.coopersoft.keycloak.phone.authentication.requiredactions.ConfigSmsOtpRequiredAction;
 import cc.coopersoft.keycloak.phone.Utils;
 import cc.coopersoft.keycloak.phone.credential.PhoneOtpCredentialModel;
 import cc.coopersoft.keycloak.phone.credential.PhoneOtpCredentialProvider;
@@ -190,7 +189,7 @@ public class RegistrationPhoneVerificationCode implements FormAction, FormAction
     logger.info(String.format("registration user %s phone success, tokenId is: %s", user.getId(), tokenId));
     getTokenCodeService(context.getSession()).tokenValidated(user, phoneNumber, tokenId,false);
 
-    context.getUser().addRequiredAction(ConfigSmsOtpRequiredAction.PROVIDER_ID);
+    // context.getUser().addRequiredAction(ConfigSmsOtpRequiredAction.PROVIDER_ID);
 
     AuthenticatorConfigModel config = context.getAuthenticatorConfig();
     if (config != null &&
