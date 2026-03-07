@@ -20,10 +20,10 @@ public class DummySmsSenderService extends FullSmsSenderAbstractService {
         // here you call the method for sending messages
         logger.info(String.format("To: %s >>> %s", phoneNumber, message));
 
-        // simulate a failure
-        if (new Random().nextInt(10) % 5 == 0) {
-            throw new MessageSendException(500, "MSG0042", "Insufficient credits to send message");
-        }
+        // simulate a failure (disabled for testing)
+        // if (new Random().nextInt(10) % 5 == 0) {
+        //     throw new MessageSendException(500, "MSG0042", "Insufficient credits to send message");
+        // }
     }
 
     @Override

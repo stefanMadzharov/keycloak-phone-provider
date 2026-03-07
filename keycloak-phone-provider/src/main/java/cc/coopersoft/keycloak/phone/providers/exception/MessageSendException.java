@@ -18,4 +18,16 @@ public class MessageSendException extends Exception {
     public MessageSendException(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setStatusCode(Integer statusCode) { this.statusCode = statusCode; }
+    public void setErrorCode(String errorCode) { this.errorCode = errorCode; }
+    public void setErrorMessage(String errorMessage) { this.errorMessage = errorMessage; }
 }

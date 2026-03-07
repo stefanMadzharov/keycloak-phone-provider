@@ -21,6 +21,22 @@ public class TokenCodeRepresentation {
     private Date expiresAt;
     private Boolean confirmed;
 
+    public Date getExpiresAt() {
+        return expiresAt;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setId(String id) { this.id = id; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+    public void setCode(String code) { this.code = code; }
+    public void setType(String type) { this.type = type; }
+    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
+    public void setExpiresAt(Date expiresAt) { this.expiresAt = expiresAt; }
+    public void setConfirmed(Boolean confirmed) { this.confirmed = confirmed; }
+
     public static TokenCodeRepresentation forPhoneNumber(String phoneNumber) {
 
         TokenCodeRepresentation tokenCode = new TokenCodeRepresentation();
