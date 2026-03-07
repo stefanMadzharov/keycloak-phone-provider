@@ -229,6 +229,7 @@ public class RegistrationPhoneUserCreation implements FormActionFactory, FormAct
     }
 
     context.getEvent().detail(FIELD_PHONE_NUMBER, phoneNumber);
+    formData.putSingle(FIELD_PHONE_NUMBER, phoneNumber);
     if (isPhoneNumberAsUsername(context)){
       context.getEvent().detail(Details.USERNAME, phoneNumber);
       formData.putSingle(UserModel.USERNAME,phoneNumber);
@@ -299,7 +300,7 @@ public class RegistrationPhoneUserCreation implements FormActionFactory, FormAct
       username = email;
     } else if (isPhoneNumberAsUsername(context)){
       username = phoneNumber;
-      formData.add(UserModel.USERNAME,phoneNumber);
+      formData.putSingle(UserModel.USERNAME,phoneNumber);
     }
 
     context.getEvent().detail(Details.USERNAME, username)
