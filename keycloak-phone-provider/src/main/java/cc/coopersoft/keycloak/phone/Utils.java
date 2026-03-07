@@ -1,23 +1,17 @@
 package cc.coopersoft.keycloak.phone;
 
 import cc.coopersoft.common.OptionalUtils;
-import cc.coopersoft.keycloak.phone.credential.PhoneOtpCredentialModel;
 import cc.coopersoft.keycloak.phone.providers.exception.PhoneNumberInvalidException;
 import cc.coopersoft.keycloak.phone.providers.spi.PhoneProvider;
 import org.jboss.logging.Logger;
-import org.keycloak.credential.CredentialModel;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
 
 import com.google.i18n.phonenumbers.*;
 import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
-import org.keycloak.models.credential.dto.OTPSecretData;
-import org.keycloak.services.validation.Validation;
-import org.keycloak.util.JsonSerialization;
 
-import javax.validation.constraints.NotNull;
-import java.io.IOException;
+import jakarta.validation.constraints.NotNull;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;

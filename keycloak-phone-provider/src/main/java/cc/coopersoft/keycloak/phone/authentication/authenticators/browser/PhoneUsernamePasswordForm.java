@@ -27,8 +27,8 @@ import org.keycloak.services.managers.AuthenticationManager;
 import org.keycloak.services.messages.Messages;
 import org.keycloak.services.validation.Validation;
 
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -37,7 +37,7 @@ import static org.keycloak.authentication.authenticators.util.AuthenticatorUtils
 import static org.keycloak.provider.ProviderConfigProperty.BOOLEAN_TYPE;
 import static org.keycloak.services.validation.Validation.FIELD_USERNAME;
 
-public class PhoneUsernamePasswordForm extends UsernamePasswordForm implements Authenticator, AuthenticatorFactory {
+public class PhoneUsernamePasswordForm extends UsernamePasswordForm implements AuthenticatorFactory {
 
   private static final Logger logger = Logger.getLogger(PhoneUsernamePasswordForm.class);
 
