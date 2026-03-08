@@ -10,7 +10,7 @@ import cc.coopersoft.keycloak.phone.credential.PhoneOtpCredentialProviderFactory
 import cc.coopersoft.keycloak.phone.providers.constants.TokenCodeType;
 import cc.coopersoft.keycloak.phone.providers.spi.PhoneProvider;
 import org.jboss.logging.Logger;
-import org.jboss.resteasy.spi.HttpResponse;
+import org.keycloak.http.HttpResponse;
 import org.keycloak.authentication.AuthenticationFlowContext;
 import org.keycloak.authentication.AuthenticationFlowError;
 import org.keycloak.authentication.Authenticator;
@@ -89,12 +89,9 @@ public class SmsOtpMfaAuthenticator implements Authenticator, CredentialValidato
   }
 
   public void addCookie(AuthenticationFlowContext context, String name, String value, String path, String domain, String comment, int maxAge, boolean secure, boolean httpOnly) {
-    HttpResponse response = context.getSession().getContext().getContextObject(HttpResponse.class);
-    // StringBuilder cookieBuf = new StringBuilder();
-    // ServerCookie.appendCookieValue(cookieBuf, 1, name, value, path, domain, comment, maxAge, secure, httpOnly, null);
-    // String cookie = cookieBuf.toString();
+    HttpResponse response = context.getSession().getContext().getHttpResponse();
     NewCookie cookie = new NewCookie(name, value, path, domain, comment, maxAge, secure, httpOnly);
-    response.getOutputHeaders().add(HttpHeaders.SET_COOKIE, cookie);
+    response.setCookieIfAbsent(cookie);
   }
 
   @Override
