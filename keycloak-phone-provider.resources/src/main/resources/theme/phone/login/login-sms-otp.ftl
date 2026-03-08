@@ -1,8 +1,11 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayInfo=true; section>
     <#if section = "header">
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
         ${msg("authCodePhoneNumber")}
     <#elseif section = "form">
+
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

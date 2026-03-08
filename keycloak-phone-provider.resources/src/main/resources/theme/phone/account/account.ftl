@@ -1,6 +1,8 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='account' bodyClass='user'; section>
 
+    <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>

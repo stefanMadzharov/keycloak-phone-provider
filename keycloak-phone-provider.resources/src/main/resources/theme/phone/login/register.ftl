@@ -1,8 +1,12 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('firstName','lastName','email','username','password','password-confirm','phoneNumber','registerCode'); section>
     <#if section = "header">
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
         ${msg("registerTitle")}
     <#elseif section = "form">
+
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
+
         <#if phoneNumberRequired??>
             <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

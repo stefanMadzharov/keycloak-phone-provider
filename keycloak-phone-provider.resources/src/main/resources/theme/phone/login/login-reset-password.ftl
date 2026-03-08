@@ -1,8 +1,11 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayInfo=true displayMessage=!messagesPerField.existsError('username','code','phoneNumber'); section>
     <#if section = "header">
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
         ${msg("emailForgotTitle")}
     <#elseif section = "form">
+
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
 
         <#if supportPhone??>
             <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

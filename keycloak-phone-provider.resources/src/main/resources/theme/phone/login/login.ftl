@@ -1,8 +1,11 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password','code','phoneNumber') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
+<@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
     <#if section = "header">
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
+
+        <link rel="stylesheet" href="${url.resourcesPath}/css/custom.css" />
 
         <#if !usernameHidden?? && supportPhone??>
 
