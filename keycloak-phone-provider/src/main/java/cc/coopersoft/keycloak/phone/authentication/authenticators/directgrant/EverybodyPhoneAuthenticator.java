@@ -4,7 +4,6 @@ import cc.coopersoft.keycloak.phone.providers.constants.TokenCodeType;
 import cc.coopersoft.keycloak.phone.providers.representations.TokenCodeRepresentation;
 import cc.coopersoft.keycloak.phone.providers.spi.PhoneVerificationCodeProvider;
 import cc.coopersoft.keycloak.phone.Utils;
-import org.jboss.logging.Logger;
 import org.keycloak.authentication.AuthenticationFlowContext;
 import org.keycloak.authentication.AuthenticationFlowError;
 import org.keycloak.models.KeycloakSession;
@@ -14,8 +13,6 @@ import org.keycloak.protocol.oidc.OIDCLoginProtocol;
 
 
 public class EverybodyPhoneAuthenticator extends BaseDirectGrantAuthenticator {
-
-  private static final Logger logger = Logger.getLogger(EverybodyPhoneAuthenticator.class);
 
   public EverybodyPhoneAuthenticator(KeycloakSession session) {
     if (session.getContext().getRealm() == null) {

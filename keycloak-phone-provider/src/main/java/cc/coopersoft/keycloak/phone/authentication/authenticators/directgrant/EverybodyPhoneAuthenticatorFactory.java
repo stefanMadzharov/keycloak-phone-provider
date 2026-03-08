@@ -3,7 +3,6 @@ package cc.coopersoft.keycloak.phone.authentication.authenticators.directgrant;
 import org.keycloak.Config;
 import org.keycloak.authentication.Authenticator;
 import org.keycloak.authentication.AuthenticatorFactory;
-import org.keycloak.authentication.ConfigurableAuthenticatorFactory;
 import org.keycloak.models.AuthenticationExecutionModel;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakSessionFactory;
@@ -11,7 +10,7 @@ import org.keycloak.provider.ProviderConfigProperty;
 
 import java.util.List;
 
-public class EverybodyPhoneAuthenticatorFactory implements AuthenticatorFactory, ConfigurableAuthenticatorFactory {
+public class EverybodyPhoneAuthenticatorFactory implements AuthenticatorFactory {
 
 
   public static final String PROVIDER_ID = "everybody-phone-authenticator";
