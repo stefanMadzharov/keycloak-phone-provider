@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+body.login-pf,
+body.login-pf input,
+body.login-pf button,
+body.login-pf textarea,
+body.login-pf select {
+  font-family: 'Calistoga', cursive !important;
+}
+
+body.login-login .login-register {
+    background: #e3852d !important;
+}
+
+.card-pf {
+    border-radius: 16px;
+    border: 0px;
+}
+
+.kc-info-wrapper {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+a {
+    color: #e3852d;
+}
+
+a:hover {
+    color: #7d4800 !important;
+    text-decoration: underline;
+}
+
+.pf-c-button.pf-m-primary {
+    color: #ffffff !important;
+    background-color: #a56000 !important;
+    border-radius: 9999px;
+    padding: 12px 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.pf-c-button.pf-m-primary:hover, .pf-c-button.pf-m-primary:active, .pf-c-button.pf-m-primary:focus {
+    background-color: #7d4800 !important;
+}
+
+.pf-c-button.pf-m-primary:disabled {
+    cursor: not-allowed;
+    background-color: #8f9191 !important;
+}
+
+.pf-c-button.pf-m-primary:disabled:hover {
+    background-color: #aaacac !important;
+}
+
+
+.btn-default {
+    color: #ffffff !important;
+    background-color: #8f9191 !important;
+    background-image: none !important;
+    border-radius: 9999px;
+    padding: 0px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:focus {
+    background-color: #757878 !important;
+}
+
+
+body.login-pf {
+    background: #e3852d !important;
+}
+
+.login-pf body {
+    background: #e3852d !important;
+    background-image: none !important;
+    overflow: hidden !important;
+}
+
+#kc-header-wrapper {
+    display: none !important;
+}
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    max-height: 80px;
+    margin-top: 40px;
+}
+
+.nav-pills>li.active>a {
+    color: #ffffff !important;
+    background-color: #e3852d !important;
+}
+
+.nav-justified>li>a {
+    color: #e3852d !important;
+}

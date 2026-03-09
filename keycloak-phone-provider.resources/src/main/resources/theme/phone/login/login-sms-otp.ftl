@@ -32,7 +32,7 @@
                             </div>
                             <div class="col-xs-4" style="padding: 0 0 0 5px">
                                 <input tabindex="0" style="height: 36px"
-                                       class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
+                                       class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
                                        type="button" v-model="sendButtonText"
                                        :disabled='sendButtonText !== initSendButtonText'
                                        v-on:click="sendVerificationCode()"/>
