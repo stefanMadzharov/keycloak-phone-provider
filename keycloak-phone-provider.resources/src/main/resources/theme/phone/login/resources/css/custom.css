@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
 
-body.login-pf,
-body.login-pf input,
-body.login-pf button,
-body.login-pf textarea,
-body.login-pf select {
-  font-family: 'Calistoga', cursive !important;
+.login-pf-page,
+.login-pf-page h1,
+.login-pf-page input,
+.login-pf-page button,
+.login-pf-page textarea,
+.login-pf-page select {
+    font-family: 'Calistoga', cursive !important;
 }
 
-body.login-login .login-register {
+.login-pf body {
     background: #e3852d !important;
+    background-image: none !important;
+    font-family: 'Calistoga', cursive !important;
 }
 
 .card-pf {
@@ -43,7 +46,9 @@ a:hover {
     line-height: 20px;
 }
 
-.pf-c-button.pf-m-primary:hover, .pf-c-button.pf-m-primary:active, .pf-c-button.pf-m-primary:focus {
+.pf-c-button.pf-m-primary:hover,
+.pf-c-button.pf-m-primary:active,
+.pf-c-button.pf-m-primary:focus {
     background-color: #7d4800 !important;
 }
 
@@ -56,7 +61,6 @@ a:hover {
     background-color: #aaacac !important;
 }
 
-
 .btn-default {
     color: #ffffff !important;
     background-color: #8f9191 !important;
@@ -68,43 +72,33 @@ a:hover {
     line-height: 20px;
 }
 
-.btn-default:hover, .btn-default:active, .btn-default:focus {
+.btn-default:hover,
+.btn-default:active,
+.btn-default:focus {
     background-color: #757878 !important;
 }
 
-
-body.login-pf {
-    background: #e3852d !important;
-}
-
-.login-pf body {
-    background: #e3852d !important;
-    background-image: none !important;
-    overflow: hidden !important;
-}
-
 #kc-header-wrapper {
-    display: none !important;
-}
-
-.logo-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    padding: 100px 0px 0px 0px !important;
+}
+
+#kc-page-title {
+    font-family: 'Calistoga', cursive !important;
 }
 
 .logo {
     max-width: 200px;
     height: auto;
     max-height: 80px;
-    margin-top: 40px;
 }
 
 .nav-pills>li.active>a {
     color: #ffffff !important;
-    background-color: #e3852d !important;
+    background-color: #a56000 !important;
 }
 
 .nav-justified>li>a {
-    color: #e3852d !important;
+    color: #a56000 !important;
 }

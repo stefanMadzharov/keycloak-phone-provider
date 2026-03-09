@@ -1,7 +1,4 @@
 <#import "template.ftl" as layout>
-<div class='logo-wrapper'>
-    <img tabindex="1" class="logo" aria-label="Close modal" src="${url.resourcesPath}/img/logo.png" />
-</div>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password','code','phoneNumber') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
     <#if section = "header">
         ${msg("loginAccountTitle")}
