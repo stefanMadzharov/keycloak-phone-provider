@@ -97,6 +97,27 @@
                 </div>
             </#if>
 
+            <#if phoneNumberRequired??>
+                <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('phoneNumber',properties.kcFormGroupErrorClass!)}">
+                    <div class="${properties.kcLabelWrapperClass!}">
+                        <label for="phoneNumber" class="${properties.kcLabelClass!}">${msg("phoneNumber")}</label>
+                    </div>
+                    <div class="${properties.kcInputWrapperClass!}">
+                        <input tabindex="0" id="phoneNumber" class="${properties.kcInputClass!}"
+                               name="phoneNumber" id="phoneNumber" type="tel"
+                               aria-invalid="<#if messagesPerField.existsError('phoneNumber')>true</#if>"
+                               autofocus
+                               value="${(register.formData.phoneNumber!'')}"
+                               autocomplete="mobile tel"/>
+                        <#if messagesPerField.existsError('phoneNumber')>
+                            <span id="input-error-password" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                ${kcSanitize(messagesPerField.get('phoneNumber'))?no_esc}
+                            </span>
+                        </#if>
+                    </div>
+                </div>
+            </#if>
+
             <#if passwordRequired??>
                 <div class="${properties.kcFormGroupClass!}">
                     <div class="${properties.kcLabelWrapperClass!}">
@@ -137,25 +158,6 @@
             </#if>
 
             <#if phoneNumberRequired??>
-                <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('phoneNumber',properties.kcFormGroupErrorClass!)}">
-                    <div class="${properties.kcLabelWrapperClass!}">
-                        <label for="phoneNumber" class="${properties.kcLabelClass!}">${msg("phoneNumber")}</label>
-                    </div>
-                    <div class="${properties.kcInputWrapperClass!}">
-                        <input tabindex="0" id="phoneNumber" class="${properties.kcInputClass!}"
-                               name="phoneNumber" id="phoneNumber" type="tel"
-                               aria-invalid="<#if messagesPerField.existsError('phoneNumber')>true</#if>"
-                               autofocus
-                               value="${(register.formData.phoneNumber!'')}"
-                               autocomplete="mobile tel"/>
-                        <#if messagesPerField.existsError('phoneNumber')>
-                            <span id="input-error-password" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                ${kcSanitize(messagesPerField.get('phoneNumber'))?no_esc}
-                            </span>
-                        </#if>
-                    </div>
-                </div>
-
                 <#if verifyPhone??>
 
                 <div class=" ${properties.kcFormGroupClass!} row">
