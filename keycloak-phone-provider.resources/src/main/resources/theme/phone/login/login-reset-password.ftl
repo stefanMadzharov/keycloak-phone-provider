@@ -32,88 +32,42 @@
 
                                 <span class="${properties.kcAlertTitleClass!}">{{ errorMessage }}</span>
                             </div>
-
-
-                            <div class="${properties.kcFormGroupClass!}">
-                                <div class="${properties.kcLabelWrapperClass!}">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li role="presentation" v-bind:class="{ active: !phoneActivated }"
-                                            v-on:click="phoneActivated = false"><a
-                                                    href="#">${msg("usernameOrEmail")}</a>
-                                        </li>
-                                        <li role="presentation" v-bind:class="{ active: phoneActivated }"
-                                            v-on:click="phoneActivated = true"><a href="#">${msg("phoneNumber")}</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
 
-                        <input type="hidden" id="phoneActivated" name="phoneActivated" v-model="phoneActivated">
-                    </#if>
+                        <input type="hidden" id="phoneActivated" name="phoneActivated" value="true">
 
-                    <div <#if supportPhone??> v-if="!phoneActivated" </#if> >
-                        <div class="${properties.kcFormGroupClass!}">
-                            <div class="${properties.kcLabelWrapperClass!}">
-                                <label for="username"
-                                       class="${properties.kcLabelClass!}">${msg("usernameOrEmail")}</label>
-                            </div>
-                            <div class="${properties.kcInputWrapperClass!}">
-                                <input type="text" id="username" name="username" class="${properties.kcInputClass!}"
-                                       autofocus
-                                       value="${(auth.attemptedUsername!'')}"
-                                       aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                                <#if messagesPerField.existsError('username')>
-                                    <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}"
-                                          aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('username'))?no_esc}
-                        </span>
-                                </#if>
-                            </div>
-                        </div>
-                    </div>
-
-                    <#if supportPhone??>
-                        <div v-if="phoneActivated">
+                        <div>
                             <div class="${properties.kcFormGroupClass!}">
-                                <div class="${properties.kcLabelWrapperClass!}">
-
-                                <label for="phoneNumber"
-                                       class="${properties.kcLabelClass!}">${msg("phoneNumber")}</label>
-                                </div>
                                 <div class="${properties.kcInputWrapperClass!}">
-                                <input type="text" id="phoneNumber" name="phoneNumber" v-model="phoneNumber"
-                                       aria-invalid="<#if messagesPerField.existsError('code','phoneNumber')>true</#if>"
-                                       class="${properties.kcInputClass!}" autofocus/>
+                                    <input type="text" id="phoneNumber" name="phoneNumber" v-model="phoneNumber"
+                                           aria-invalid="<#if messagesPerField.existsError('code','phoneNumber')>true</#if>"
+                                           placeholder='${msg("phoneNumber")}'
+                                           class="${properties.kcInputClass!}" autofocus/>
 
-                                <#if messagesPerField.existsError('code','phoneNumber')>
-                                    <span id="input-error" class="${properties.kcInputErrorMessageClass!}"
-                                          aria-live="polite">
-                                    ${kcSanitize(messagesPerField.getFirstError('phoneNumber','code'))?no_esc}
-                                    </span>
-                                </#if>
+                                    <#if messagesPerField.existsError('code','phoneNumber')>
+                                        <div id="input-error" class="${properties.kcInputErrorMessageClass!}"
+                                              aria-live="polite">
+                                        ${kcSanitize(messagesPerField.getFirstError('phoneNumber','code'))?no_esc}
+                                        </div>
+                                    </#if>
                                 </div>
                             </div>
 
                             <div class="${properties.kcFormGroupClass!} row">
-                                <div class="${properties.kcLabelWrapperClass!}" style="padding: 0">
-                                    <label for="code"
-                                           class="${properties.kcLabelClass!}">${msg("verificationCode")}</label>
-                                </div>
                                 <div class="col-xs-8" style="padding: 0 5px 0 0">
                                     <input type="text" id="code" name="code"
                                            aria-invalid="<#if messagesPerField.existsError('code','phoneNumber')>true</#if>"
+                                           placeholder='${msg("verificationCode")}'
                                            class="${properties.kcInputClass!}" autocomplete="off"/>
                                 </div>
                                 <div class="col-xs-4" style="padding: 0 0 0 5px">
-                                    <input tabindex="0" style="height: 36px"
+                                    <input tabindex="0"
                                            class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
                                            type="button" v-model="sendButtonText"
                                            :disabled='sendButtonText !== initSendButtonText'
                                            v-on:click="sendVerificationCode()"/>
                                 </div>
                             </div>
-
                         </div>
                     </#if>
 
@@ -149,8 +103,6 @@
                     el: '#vue-app',
                     data: {
                         errorMessage: '',
-                        freezeSendCodeSeconds: 0,
-                        phoneActivated: <#if attemptedPhoneActivated??>true<#else>false</#if>,
                         phoneNumber: '${attemptedPhoneNumber!}',
                         sendButtonText: '${msg("sendVerificationCode")}',
                         initSendButtonText: '${msg("sendVerificationCode")}',

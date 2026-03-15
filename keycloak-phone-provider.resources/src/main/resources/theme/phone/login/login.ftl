@@ -61,40 +61,28 @@
                         <div  <#if !usernameHidden?? && supportPhone??> v-if="!phoneActivated" </#if> >
                             <#if !usernameHidden??>
                                 <div class="${properties.kcFormGroupClass!}">
-                                    <label for="username" class="${properties.kcLabelClass!}">
-                                        <#if !realm.loginWithEmailAllowed>
-                                            <#if loginWithPhoneNumber??> ${msg("usernameOrPhoneNumber")} <#else>${msg("usernameOrPhoneNumber")}</#if>
-                                        <#elseif !realm.registrationEmailAsUsername>
-                                            <#if loginWithPhoneNumber??> ${msg("usernameOrEmailOrPhoneNumber")} <#else>${msg("usernameOrEmail")}</#if>
-                                        <#else>
-                                            <#if loginWithPhoneNumber??> ${msg("emailOrPhoneNumber")} <#else>${msg("email")}</#if>
-                                        </#if>
-                                    </label>
-
-                                    <input tabindex="0" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}"  type="text" autofocus autocomplete="off"
+                                    <input tabindex="0" id="username" class="${properties.kcInputClass!}" name="username" placeholder="${msg("usernameOrPhoneNumber")}" value="${(login.username!'')}"  type="text" autofocus autocomplete="off"
                                            aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                                     />
 
                                     <#if messagesPerField.existsError('username','password')>
-                                        <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                        <div id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
                                     ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
-                            </span>
+                            </div>
                                     </#if>
 
                                 </div>
                             </#if>
 
                             <div class="${properties.kcFormGroupClass!}">
-                                <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
-
-                                <input tabindex="0" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="off"
+                                <input tabindex="0" id="password" class="${properties.kcInputClass!}" name="password" type="password" placeholder="${msg("password")}" autocomplete="off"
                                        aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                                 />
 
                                 <#if usernameHidden?? && messagesPerField.existsError('username','password')>
-                                    <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                    <div id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
                                     ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
-                                </span>
+                                </div>
                                 </#if>
 
                             </div>
@@ -132,9 +120,9 @@
                                            aria-invalid="<#if messagesPerField.existsError('code','phoneNumber')>true</#if>"
                                            class="${properties.kcInputClass!}" autofocus/>
                                     <#if messagesPerField.existsError('code','phoneNumber')>
-                                        <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                        <div id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
                                     ${kcSanitize(messagesPerField.getFirstError('phoneNumber','code'))?no_esc}
-                                        </span>
+                                        </div>
                                     </#if>
                                 </div>
 

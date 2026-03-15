@@ -21,17 +21,14 @@
 
 
                         <div class="${properties.kcFormGroupClass!} row">
-                            <div class="${properties.kcLabelWrapperClass!}" style="padding: 0">
-                                <label for="code"
-                                       class="${properties.kcLabelClass!}">${msg("authenticationCode")}</label>
-                            </div>
                             <div class="col-xs-8" style="padding: 0 5px 0 0">
                                 <input tabindex="0" id="code" class="${properties.kcInputClass!}" name="code"
+                                       placeholder='${msg("authenticationCode")}'
                                        type="text" autofocus
                                        autocomplete="off"/>
                             </div>
                             <div class="col-xs-4" style="padding: 0 0 0 5px">
-                                <input tabindex="0" style="height: 36px"
+                                <input tabindex="0"
                                        class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
                                        type="button" v-model="sendButtonText"
                                        :disabled='sendButtonText !== initSendButtonText'
